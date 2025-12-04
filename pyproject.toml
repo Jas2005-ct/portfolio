@@ -1,0 +1,25 @@
+[project]
+name = "portfolio"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Jas2005-ct",email = "jaswantjas02@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django (>=5.2.9,<6.0.0)",
+    "pillow (>=12.0.0,<13.0.0)",
+    "djangorestframework (>=3.16.1,<4.0.0)",
+    "gunicorn (>=23.0.0,<24.0.0)",
+    "psycopg2-binary (>=2.9.11,<3.0.0)",
+    "dj-database-url (>=3.0.1,<4.0.0)",
+    "whitenoise (>=6.11.0,<7.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "portfolio", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

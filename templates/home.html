@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Loading...</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-img-container" id="hero-img-container" style="display: none;">
+                    <img id="hero-img" src="" alt="Profile">
+                </div>
+                <h1 id="hero-name">Welcome</h1>
+                <p id="hero-title">Loading profile...</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#contact" class="btn btn-primary btn-lg rounded-pill px-4">Contact Me</a>
+                    <a href="#" id="resume-btn" class="btn btn-outline-light btn-lg rounded-pill px-4" target="_blank">Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <div class="glass-card text-center p-5">
+                        <p id="about-bio" class="lead mb-4" style="text-align: justify;">Loading bio...</p>
+                        <div class="row text-start justify-content-center">
+                            <div class="col-md-6 mb-3 d-flex align-items-center">
+                                <i class="fas fa-map-marker-alt text-primary me-3 fa-lg"></i> <span id="about-address"></span>
+                            </div>
+                            <div class="col-md-6 mb-3 d-flex align-items-center">
+                                <i class="fas fa-phone text-primary me-3 fa-lg"></i> <span id="about-phone"></span>
+                            </div>
+                            <div class="col-md-6 mb-3 d-flex align-items-center">
+                                <i class="fas fa-envelope text-primary me-3 fa-lg"></i> <span id="about-email"></span>
+                            </div>
+                            <div class="col-md-6 mb-3 d-flex align-items-center">
+                                <a href="#" id="about-resume-btn" class="btn btn-outline-primary btn-sm rounded-pill px-4" target="_blank" style="display:none;">
+                                    <i class="fas fa-download me-2"></i> Download Resume
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="row justify-content-center" id="skills-container">
+                <!-- Skills injected here -->
+            </div>
+            
+            <div class="mt-5">
+                <h3 class="text-center mb-4">Tech Stack</h3>
+                <div class="d-flex justify-content-center flex-wrap gap-4" id="tech-stack-container">
+                    <!-- Tech Stack injected here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            <div class="row g-4" id="certificates-container">
+                <!-- Certificates injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-4 text-center"><i class="fas fa-briefcase me-2"></i>Work</h3>
+                    <div id="work-container">
+                        <!-- Work items injected here -->
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mb-4 text-center"><i class="fas fa-graduation-cap me-2"></i>Education</h3>
+                    <div id="education-container">
+                        <!-- Education items injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="row g-4" id="projects-container">
+                <!-- Projects injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Button Section -->
+    <section id="contact-btn-section" class="py-5 text-center">
+        <div class="container">
+            <button type="button" class="btn btn-primary btn-lg rounded-pill px-5" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <i class="fas fa-paper-plane me-2"></i> Send a Message
+            </button>
+            <div class="social-icons mt-5" id="social-links-container">
+                <!-- Social links injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white" id="projectModalTitle">Project Title</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-white">
+                    <img id="projectModalImg" src="" class="img-fluid rounded mb-4 w-100" style="max-height: 400px; object-fit: cover; display: none;">
+                    <div class="mb-3">
+                        <h6 class="text-primary">Tech Stack</h6>
+                        <div id="projectModalTech"></div>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="text-primary">Description</h6>
+                        <p id="projectModalDesc"></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6 class="text-primary">Motive</h6>
+                            <p id="projectModalMotive"></p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6 class="text-primary">Problem Statement</h6>
+                            <p id="projectModalProblem"></p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mt-3" id="projectModalLinks">
+                        <!-- Links injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Get In Touch</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" name="sender_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" name="sender_email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" name="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div class="modal fade" id="certificateModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="certModalTitle">Certificate</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center p-0">
+                    <img src="" id="certModalImg" class="img-fluid rounded" alt="Certificate">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 border-top border-secondary mt-5">
+        <p class="mb-0 text-muted">&copy; <span id="year"></span> Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#year').text(new Date().getFullYear());
+
+            // Fetch Portfolio Data
+            $.ajax({
+                url: '/api/portfolio-data/',
+                method: 'GET',
+                success: function(data) {
+                    console.log("Data fetched:", data);
+                    
+                    // Profile
+                    if (data.profile) {
+                        document.title = data.profile.name + " | Portfolio";
+                        $('#hero-name').text("Hi, I'm " + data.profile.name);
+                        $('#hero-title').text(data.profile.title || "Developer");
+                        $('#about-bio').text(data.profile.bio || "No bio available.");
+                        $('#about-address').text(data.profile.address);
+                        $('#about-phone').text(data.profile.phone);
+                        $('#about-email').text(data.profile.email);
+                        
+                        if (data.profile.profile_image) {
+                            $('#hero-img').attr('src', data.profile.profile_image);
+                            $('#hero-img-container').show();
+                        }
+                    }
+
+                    // Resume
+                    if (data.resume) {
+                        $('#resume-btn').attr('href', data.resume.resume);
+                        $('#about-resume-btn').attr('href', data.resume.resume).show();
+                    } else {
+                        $('#resume-btn').hide();
+                        $('#about-resume-btn').hide();
+                    }
+
+                    // Skills
+                    if (data.skills && data.skills.length > 0) {
+                        let skillsHtml = '';
+                        data.skills.forEach(skill => {
+                            let imgHtml = '';
+                            if (skill.image) {
+                                imgHtml = `<img src="${skill.image}" alt="${skill.skill}" class="skill-icon">`;
+                            }
+                            // If no image, we just don't show an icon, or we could show a default. 
+                            // User asked to remove icon if not compulsory. Let's make it so if no image, no icon.
+                            // But to keep layout, maybe just a spacer or nothing.
+                            // Let's just show nothing if no image, as requested "remove the icon".
+                            
+                            skillsHtml += `
+                                <div class="col-6 col-md-3 col-lg-2 mb-4">
+                                    <div class="skill-card text-center">
+                                        ${imgHtml}
+                                        <h5 class="mt-2">${skill.skill}</h5>
+                                        <small class="text-muted">${skill.level}</small>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        $('#skills-container').html(skillsHtml);
+                    } else {
+                        $('#skills-container').html('<p class="text-muted text-center">No skills listed.</p>');
+                    }
+
+                    // Tech Stack
+                    if (data.tech_stack && data.tech_stack.length > 0) {
+                        let techHtml = '';
+                        data.tech_stack.forEach(tech => {
+                            techHtml += `<div class="tech-item"><span class="badge bg-secondary p-2">${tech.name}</span></div>`;
+                        });
+                        $('#tech-stack-container').html(techHtml);
+                    } else {
+                        $('#tech-stack-container').html('<p class="text-muted text-center">No tech stack listed.</p>');
+                    }
+
+                    // Certificates
+                    if (data.certificates && data.certificates.length > 0) {
+                        let certHtml = '';
+                        data.certificates.forEach(cert => {
+                            let imgHtml = '';
+                            if (cert.image) {
+                                imgHtml = `<img src="${cert.image}" class="cert-img" alt="${cert.course}">`;
+                            } else {
+                                imgHtml = `<div class="cert-placeholder"><i class="fas fa-certificate fa-3x text-muted"></i></div>`;
+                            }
+
+                            certHtml += `
+                                <div class="col-md-4">
+                                    <div class="glass-card cert-card" style="cursor: pointer;">
+                                        ${imgHtml}
+                                        <div class="p-3">
+                                            <h5>${cert.course}</h5>
+                                            <p class="text-muted mb-0">${cert.platform}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        $('#certificates-container').html(certHtml);
+                    } else {
+                        $('#certificates-container').html('<p class="text-muted text-center">No certificates listed.</p>');
+                    }
+
+                    // Experience (Internship + Profession)
+                    let workHtml = '';
+                    let works = [...data.professions, ...data.internships];
+                    works.sort((a, b) => b.start_year - a.start_year);
+
+                    if (works.length > 0) {
+                        works.forEach(work => {
+                            let endYear = work.end_year ? work.end_year : 'Present';
+                            let title = work.role || work.role; 
+                            let company = work.company;
+                            
+                            workHtml += `
+                                <div class="timeline-item">
+                                    <span class="timeline-date">${work.start_year} - ${endYear}</span>
+                                    <h5>${title}</h5>
+                                    <p class="text-muted mb-0">${company}</p>
+                                </div>
+                            `;
+                        });
+                        $('#work-container').html(workHtml);
+                    } else {
+                        $('#work-container').html('<p class="text-muted">No work experience listed.</p>');
+                    }
+
+                    // Education
+                    if (data.education && data.education.length > 0) {
+                        let eduHtml = '';
+                        data.education.forEach(edu => {
+                            let endYear = edu.end_year ? edu.end_year : 'Present';
+                            eduHtml += `
+                                <div class="timeline-item">
+                                    <span class="timeline-date">${edu.start_year} - ${endYear}</span>
+                                    <h5>${edu.course}</h5>
+                                    <p class="text-muted mb-0">${edu.institution}</p>
+                                </div>
+                            `;
+                        });
+                        $('#education-container').html(eduHtml);
+                    } else {
+                        $('#education-container').html('<p class="text-muted">No education listed.</p>');
+                    }
+
+                    // Projects
+                    if (data.projects && data.projects.length > 0) {
+                        let projHtml = '';
+                        data.projects.forEach(proj => {
+                            let imgHtml = '';
+                            if (proj.image) {
+                                imgHtml = `<img src="${proj.image}" class="project-img" alt="${proj.title}">`;
+                            }
+                            
+                            let github = proj.github_link ? `<a href="${proj.github_link}" target="_blank"><i class="fab fa-github"></i></a>` : '';
+                            let live = proj.live_demo ? `<a href="${proj.live_demo}" target="_blank"><i class="fas fa-external-link-alt"></i></a>` : '';
+                            
+                            let techStackHtml = '';
+                            if (proj.technologies && proj.technologies.length > 0) {
+                                proj.technologies.forEach(tech => {
+                                    techStackHtml += `<span class="badge bg-primary me-1" style="background: rgba(112, 0, 255, 0.2) !important; border: 1px solid var(--tertiary-color);">${tech.name}</span>`;
+                                });
+                            } else if (proj.tech_stack) {
+                                proj.tech_stack.split(',').forEach(tech => {
+                                    techStackHtml += `<span class="badge bg-secondary me-1">${tech.trim()}</span>`;
+                                });
+                            }
+
+                            // Escape single quotes for JSON attribute
+                            let projData = JSON.stringify(proj).replace(/'/g, "&#39;");
+
+                            projHtml += `
+                                <div class="col-md-4 mb-4">
+                                    <div class="glass-card project-card h-100" style="cursor: pointer;" data-project='${projData}'>
+                                        ${imgHtml}
+                                        <h4>${proj.title}</h4>
+                                        <div class="mb-2"><strong>Tech Used:</strong> ${techStackHtml}</div>
+                                        <p>${proj.description.substring(0, 100)}...</p>
+                                        <div class="project-links mt-auto">
+                                            ${github}
+                                            ${live}
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        $('#projects-container').html(projHtml);
+                        
+                        // Project Card Click Handler
+                        $('.project-card').click(function(e) {
+                            // Prevent modal if clicking directly on links
+                            if ($(e.target).closest('a').length) return;
+
+                            let proj = $(this).data('project');
+                            
+                            $('#projectModalTitle').text(proj.title);
+                            $('#projectModalDesc').html(`<p class="lead mb-4" style="text-align: justify;">${proj.description}</p>`);
+                            $('#projectModalMotive').html(`<p class="lead mb-4" style="text-align: justify;">${proj.motive}</p>`);
+                            $('#projectModalProblem').html(`<p class="lead mb-4" style="text-align: justify;">${proj.problem_statement}</p>`);
+                            
+                            if (proj.image) {
+                                $('#projectModalImg').attr('src', proj.image).show();
+                            } else {
+                                $('#projectModalImg').hide();
+                            }
+
+                            // Tech Stack
+                            let techHtml = '';
+                            if (proj.technologies && proj.technologies.length > 0) {
+                                proj.technologies.forEach(tech => {
+                                    techHtml += `<span class="badge bg-primary me-1 mb-1" style="background: rgba(112, 0, 255, 0.2) !important; border: 1px solid var(--tertiary-color);">${tech.name}</span>`;
+                                });
+                            } else if (proj.tech_stack) {
+                                proj.tech_stack.split(',').forEach(tech => {
+                                    techHtml += `<span class="badge bg-secondary me-1 mb-1">${tech.trim()}</span>`;
+                                });
+                            }
+                            $('#projectModalTech').html(techHtml);
+
+                            // Links
+                            let linksHtml = '';
+                            if (proj.github_link) {
+                                linksHtml += `<a href="${proj.github_link}" target="_blank" class="btn btn-outline-light"><i class="fab fa-github me-2"></i>GitHub</a>`;
+                            }
+                            if (proj.live_demo) {
+                                linksHtml += `<a href="${proj.live_demo}" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt me-2"></i>Live Demo</a>`;
+                            }
+                            $('#projectModalLinks').html(linksHtml);
+
+                            $('#projectModal').modal('show');
+                        });
+                    } else {
+                        $('#projects-container').html('<p class="text-center text-muted">No projects listed.</p>');
+                    }
+
+                    // Social Links
+                    if (data.social_links) {
+                        let socialHtml = '';
+                        const links = data.social_links;
+                        if (links.github) socialHtml += `<a href="${links.github}" target="_blank"><i class="fab fa-github"></i></a>`;
+                        if (links.linkedin) socialHtml += `<a href="${links.linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>`;
+                        if (links.twitter) socialHtml += `<a href="${links.twitter}" target="_blank"><i class="fab fa-twitter"></i></a>`;
+                        if (links.instagram) socialHtml += `<a href="${links.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>`;
+                        if (links.facebook) socialHtml += `<a href="${links.facebook}" target="_blank"><i class="fab fa-facebook"></i></a>`;
+                        
+                        $('#social-links-container').html(socialHtml);
+                    }
+
+                    // Hide Loader
+                    setTimeout(function() {
+                        $('#loader').fadeOut();
+                    }, 500);
+                },
+                error: function(err) {
+                    console.error("Error fetching data:", err);
+                    $('#loader').html('<p class="text-danger text-center">Failed to load data.</p>');
+                }
+            });
+
+            // Contact Form Submission
+            $('#contact-form').submit(function(e) {
+                e.preventDefault();
+                let formData = new FormData(this);
+                
+                $.ajax({
+                    url: '/api/contact/',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function() {
+                        alert('Message sent successfully!');
+                        $('#contact-form')[0].reset();
+                        $('#contactModal').modal('hide');
+                    },
+                    error: function(err) {
+                        console.error(err);
+                        alert('Error sending message. Please try again.');
+                    }
+                });
+            });
+
+            // Certificate Modal Click Handler
+            $(document).on('click', '.cert-card', function() {
+                let img = $(this).find('img').attr('src');
+                let title = $(this).find('h5').text();
+                if (img) {
+                    $('#certModalImg').attr('src', img);
+                    $('#certModalTitle').text(title);
+                    $('#certificateModal').modal('show');
+                }
+            });
+
+            // Scroll Animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            $('section').each(function() {
+                $(this).addClass('fade-in-section');
+                observer.observe(this);
+            });
+        });
+    </script>
+</body>
+</html>
