@@ -8,3 +8,4 @@ poetry install
 
 python manage.py collectstatic --no-input
 python manage.py migrate
+python manage.py createsuperuser_if_none_exists
