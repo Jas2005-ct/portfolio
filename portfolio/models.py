@@ -130,7 +130,7 @@ class SocialLink(models.Model):
 
 class Resume(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    resume = CloudinaryField('resume', resource_type='raw')
+    resume = CloudinaryField('resume', resource_type='auto', folder='resume')
 
 class Service(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
