@@ -335,9 +335,8 @@
                             $('#resumeModal').modal('show');
                         });
 
-                        // About Button: Force Download using Cloudinary flag
-                        // appends ?fl_attachment=resume to URL
-                        const downloadUrl = data.resume.file_url + (data.resume.file_url.includes('?') ? '&' : '?') + 'fl_attachment=resume';
+                        // About Button: Force Download using proper backend-generated URL
+                        const downloadUrl = data.resume.download_url || data.resume.file_url;
                         $('#about-resume-btn').attr('href', downloadUrl).show();
                     } else {
                         $('#resume-btn').hide();

@@ -1,4 +1,5 @@
 from rest_framework import serializers
+import cloudinary.utils # Import cloudinary utils
 from .models import CustomUser, Profile, Education, Certificate, Internship, Profession, Skill, Project, SocialLink, Resume, Service, Testimonial, ContactMessage, Technology
 
 
@@ -61,14 +62,35 @@ class SocialLinkSerializer(serializers.ModelSerializer):
 
 class ResumeSerializer(serializers.ModelSerializer):
     file_url = serializers.SerializerMethodField()
+    download_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Resume
-        fields = ['id', 'user', 'resume', 'file_url']
+        fields = ['id', 'user', 'resume', 'file_url', 'download_url']
         read_only_fields = ['user']
 
     def get_file_url(self, obj):
         return obj.resume.url
+    
+    def get_download_url(self, obj):
+        # Generate a proper download URL with attachment flag
+        if not obj.resume:
+            return None
+        try:
+            # Use public_id if available, otherwise try name
+            public_id = getattr(obj.resume, 'public_id', obj.resume.name)
+            # Ensure resource_type is handled (default to 'auto' or 'image' if not found)
+            resource_type = getattr(obj.resume, 'resource_type', 'image') 
+            
+            url, options = cloudinary.utils.cloudinary_url(
+                public_id,
+                resource_type=resource_type,
+                flags="attachment"
+            )
+            return url
+        except Exception as e:
+            # Fallback
+            return obj.resume.url
 
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
