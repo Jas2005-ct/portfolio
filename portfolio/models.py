@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
-from cloudinary_storage.storage import RawMediaCloudinaryStorage
+
 
 class CustomManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -129,7 +129,7 @@ class SocialLink(models.Model):
 
 class Resume(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    resume = models.FileField(upload_to='resume', storage=RawMediaCloudinaryStorage())
+    resume = models.FileField(upload_to='resume')
 
 class Service(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
