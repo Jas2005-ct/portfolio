@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+from cloudinary.models import CloudinaryField
 
 
 class CustomManager(BaseUserManager):
@@ -129,7 +130,7 @@ class SocialLink(models.Model):
 
 class Resume(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    resume = models.FileField(upload_to='resume')
+    resume = CloudinaryField('resume', resource_type='raw')
 
 class Service(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
