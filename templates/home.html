@@ -208,8 +208,17 @@
                     <h5 class="modal-title">My Resume</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-0">
-                    <iframe id="resumeModalFrame" src="" width="100%" height="100%" style="border: none;"></iframe>
+                <div class="modal-body p-0 text-center" style="background: #1a1a1a;">
+                    <!-- Image Preview (Primary) -->
+                    <img id="resumeModalImg" src="" class="img-fluid" style="display:none; max-width: 100%; height: auto;">
+                    
+                    <!-- Iframe Fallback -->
+                    <iframe id="resumeModalFrame" src="" width="100%" height="500px" style="border: none; display:none;"></iframe>
+                </div>
+                <div class="modal-footer border-0 justify-content-center">
+                    <a href="#" id="resumeDownloadBtn" class="btn btn-primary rounded-pill px-4" target="_blank">
+                        <i class="fas fa-download me-2"></i> Download Full PDF
+                    </a>
                 </div>
             </div>
         </div>
@@ -300,12 +309,36 @@
 
                     // Resume
                     if (data.resume) {
-                        // Hero Button: Open Modal with Google Docs Viewer
+                        // Hero Button: Open Modal
                         $('#resume-btn').attr('href', '#').off('click').click(function(e) {
                             e.preventDefault();
-                            // Use Google Docs Viewer for reliable PDF embedding
-                            const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(data.resume.file_url)}&embedded=true`;
-                            $('#resumeModalFrame').attr('src', viewerUrl);
+                            
+                            const fileUrl = data.resume.file_url;
+                            const isPdf = fileUrl.toLowerCase().endsWith('.pdf');
+
+                            // Reset Modal Elements
+                            $('#resumeModalImg').hide();
+                            $('#resumeModalFrame').hide();
+                            $('#resumeDownloadBtn').attr('href', fileUrl);
+
+                            if (isPdf) {
+                                // 1. Try JPG Preview (Page 1) - Best for Cloudinary
+                                // Replace .pdf with .jpg
+                                const jpgUrl = fileUrl.replace(/\.pdf$/i, '.jpg');
+                                $('#resumeModalImg').attr('src', jpgUrl).show();
+
+                                // 2. Fallback to Google Viewer if JPG fails
+                                $('#resumeModalImg').off('error').on('error', function() {
+                                    $(this).hide();
+                                    const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(fileUrl)}&embedded=true`;
+                                    $('#resumeModalFrame').attr('src', viewerUrl).show();
+                                });
+                            } else {
+                                // Non-PDF: Use Google Viewer
+                                const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(fileUrl)}&embedded=true`;
+                                $('#resumeModalFrame').attr('src', viewerUrl).show();
+                            }
+
                             $('#resumeModal').modal('show');
                         });
 
