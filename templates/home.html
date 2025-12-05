@@ -283,8 +283,8 @@
 
                     // Resume
                     if (data.resume) {
-                        $('#resume-btn').attr('href', data.resume.resume);
-                        $('#about-resume-btn').attr('href', data.resume.resume).show();
+                        $('#resume-btn').attr('href', data.resume.file_url);
+                        $('#about-resume-btn').attr('href', data.resume.file_url).show();
                     } else {
                         $('#resume-btn').hide();
                         $('#about-resume-btn').hide();

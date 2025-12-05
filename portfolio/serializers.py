@@ -60,10 +60,15 @@ class SocialLinkSerializer(serializers.ModelSerializer):
         read_only_fields = ['user']
 
 class ResumeSerializer(serializers.ModelSerializer):
+    file_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Resume
-        fields = '__all__'
+        fields = ['id', 'user', 'resume', 'file_url']
         read_only_fields = ['user']
+
+    def get_file_url(self, obj):
+        return obj.resume.url
 
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
