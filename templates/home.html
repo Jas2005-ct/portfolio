@@ -83,9 +83,7 @@
                                 <i class="fas fa-envelope text-primary me-3 fa-lg"></i> <span id="about-email"></span>
                             </div>
                             <div class="col-md-6 mb-3 d-flex align-items-center">
-                                <a href="#" id="about-resume-btn" class="btn btn-outline-primary btn-sm rounded-pill px-4" target="_blank" style="display:none;">
-                                    <i class="fas fa-download me-2"></i> Download Resume
-                                </a>
+                            <!-- Download button removed as per request -->
                             </div>
                         </div>
                     </div>
@@ -208,12 +206,12 @@
                     <h5 class="modal-title">My Resume</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-0 text-center custom-scrollbar" style="background: #1a1a1a; max-height: 80vh; overflow-y: auto;">
+                <div class="modal-body p-0 text-center" style="background: #1a1a1a;">
                     <!-- Image Preview (Primary) -->
                     <img id="resumeModalImg" src="" class="img-fluid" style="display:none; width: 100%; height: auto;">
                     
                     <!-- Iframe Fallback -->
-                    <iframe id="resumeModalFrame" src="" width="100%" height="100%" style="border: none; display:none; min-height: 500px;"></iframe>
+                    <iframe id="resumeModalFrame" src="" width="100%" height="100%" style="border: none; display:none; min-height: 100vh;"></iframe>
                 </div>
             </div>
         </div>
@@ -335,9 +333,8 @@
                             $('#resumeModal').modal('show');
                         });
 
-                        // About Button: Force Download using proper backend-generated URL
-                        const downloadUrl = data.resume.download_url || data.resume.file_url;
-                        $('#about-resume-btn').attr('href', downloadUrl).show();
+                        // About Button: Force Download logic removed
+                        // $('#about-resume-btn').attr('href', downloadUrl).show();
                     } else {
                         $('#resume-btn').hide();
                         $('#about-resume-btn').hide();
