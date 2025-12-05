@@ -300,10 +300,12 @@
 
                     // Resume
                     if (data.resume) {
-                        // Hero Button: Open Modal
+                        // Hero Button: Open Modal with Google Docs Viewer
                         $('#resume-btn').attr('href', '#').off('click').click(function(e) {
                             e.preventDefault();
-                            $('#resumeModalFrame').attr('src', data.resume.file_url);
+                            // Use Google Docs Viewer for reliable PDF embedding
+                            const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(data.resume.file_url)}&embedded=true`;
+                            $('#resumeModalFrame').attr('src', viewerUrl);
                             $('#resumeModal').modal('show');
                         });
 
