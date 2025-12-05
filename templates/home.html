@@ -208,17 +208,12 @@
                     <h5 class="modal-title">My Resume</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body p-0 text-center" style="background: #1a1a1a;">
+                <div class="modal-body p-0 text-center custom-scrollbar" style="background: #1a1a1a; max-height: 80vh; overflow-y: auto;">
                     <!-- Image Preview (Primary) -->
-                    <img id="resumeModalImg" src="" class="img-fluid" style="display:none; max-width: 100%; height: auto;">
+                    <img id="resumeModalImg" src="" class="img-fluid" style="display:none; width: 100%; height: auto;">
                     
                     <!-- Iframe Fallback -->
-                    <iframe id="resumeModalFrame" src="" width="100%" height="500px" style="border: none; display:none;"></iframe>
-                </div>
-                <div class="modal-footer border-0 justify-content-center">
-                    <a href="#" id="resumeDownloadBtn" class="btn btn-primary rounded-pill px-4" target="_blank">
-                        <i class="fas fa-download me-2"></i> Download Full PDF
-                    </a>
+                    <iframe id="resumeModalFrame" src="" width="100%" height="100%" style="border: none; display:none; min-height: 500px;"></iframe>
                 </div>
             </div>
         </div>
@@ -319,11 +314,9 @@
                             // Reset Modal Elements
                             $('#resumeModalImg').hide();
                             $('#resumeModalFrame').hide();
-                            $('#resumeDownloadBtn').attr('href', fileUrl);
-
+                            
                             if (isPdf) {
                                 // 1. Try JPG Preview (Page 1) - Best for Cloudinary
-                                // Replace .pdf with .jpg
                                 const jpgUrl = fileUrl.replace(/\.pdf$/i, '.jpg');
                                 $('#resumeModalImg').attr('src', jpgUrl).show();
 
@@ -342,8 +335,10 @@
                             $('#resumeModal').modal('show');
                         });
 
-                        // About Button: Download
-                        $('#about-resume-btn').attr('href', data.resume.file_url).attr('download', 'Resume.pdf').show();
+                        // About Button: Force Download using Cloudinary flag
+                        // appends ?fl_attachment=resume to URL
+                        const downloadUrl = data.resume.file_url + (data.resume.file_url.includes('?') ? '&' : '?') + 'fl_attachment=resume';
+                        $('#about-resume-btn').attr('href', downloadUrl).show();
                     } else {
                         $('#resume-btn').hide();
                         $('#about-resume-btn').hide();
